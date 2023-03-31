@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Heading, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Textarea, VStack, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, HStack, Heading, Input, Modal, ModalBody, ModalCloseButton, Link, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Textarea, VStack, useDisclosure } from '@chakra-ui/react'
 import Head from 'next/head'
 import { useState } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
@@ -77,9 +77,6 @@ export default function Home() {
             <Heading>
               Split Bill app
             </Heading>
-            <Text>
-              By Rio chandra
-            </Text>
             {peopleForm.fields.length < 1 && (
               <Text color='orange.500'>
                 No people added
@@ -141,7 +138,14 @@ export default function Home() {
                 </HStack>
               </>
             )}
+            <Box as='footer' mt='6' display={'flex'} alignItems={'center'}>
+              <Text mr='3'>
+                By <Link href='https://riochndr.com' textDecor={'underline'}>Rio chandra</Link>
+              </Text>
+              <a href="https://trakteer.id/rio-chandra-kovdx" target="_blank"><img id="wse-buttons-preview" src="https://cdn.trakteer.id/images/embed/trbtn-red-1.png" style={{ border: '0px', height: '40px' }} alt="Trakteer Saya" height="40" /></a>
+            </Box>
           </VStack>
+
         </main>
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
